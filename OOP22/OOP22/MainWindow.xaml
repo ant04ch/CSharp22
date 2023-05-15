@@ -1,0 +1,57 @@
+﻿<Window x:Class="OOP22.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP22"
+        mc:Ignorable="d"
+        Title="Hozhulian Anton" Height="450" Width="800" Icon="/в.png">
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Command="ApplicationCommands.Open">
+                <Image Source="/icons8-папка-30.png" Width="16" Height="16" />
+            </Button>
+            <Button Command="local:MainWindow.LoadImageCommand">
+                <Image Source="/image (11).png" Width="16" Height="16" />
+            </Button>
+            <Button Command="ApplicationCommands.Save">
+                <Image Source="/icons8-сохранить-30.png" Width="16" Height="16" />
+            </Button>
+            <Separator />
+            <Button Command="local:MainWindow.AlignLeftCommand">
+                <Image Source="/icons8-выровнять-по-левому-краю-50.png" Width="16" Height="16" />
+            </Button>
+            <Button Command="local:MainWindow.AlignCenterCommand">
+                <Image Source="/icons8-выровнять-по-обоим-краям-50.png" Width="16" Height="16" />
+            </Button>
+            <Button Command="local:MainWindow.AlignRightCommand">
+                <Image Source="/icons8-выровнять-по-правому-краю-50.png" Width="16" Height="16" />
+            </Button>
+            <Separator />
+            <ToggleButton Command="EditingCommands.ToggleBold" Name="btnBold">
+                <Image Source="/image (10).png" Width="16" Height="16" />
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleItalic" Name="btnItalic">
+                <Image Source="/image (3).png" Width="16" Height="16" />
+            </ToggleButton>
+            <ToggleButton Command="EditingCommands.ToggleUnderline" Name="btnUnderline">
+                <Image Source="/image (19).png" Width="16" Height="16"/>
+            </ToggleButton>
+            <Separator />
+            <ComboBox Name="cmbFontFamily" Width="150" SelectionChanged="cmbFontFamily_SelectionChanged">
+                <ComboBoxItem Content="Arial" />
+                <ComboBoxItem Content="Times New Roman" />
+                <ComboBoxItem Content="Verdana" />
+            </ComboBox>
+            <ComboBox Name="cmbFontSize" Width="50" IsEditable="True" SelectionChanged="cmbFontSize_SelectionChanged">
+                <ComboBoxItem Content="10" />
+                <ComboBoxItem Content="12" />
+                <ComboBoxItem Content="14" />
+                <ComboBoxItem Content="16" />
+                <ComboBoxItem Content="18" />
+                <ComboBoxItem Content="20" />
+            </ComboBox>
+        </ToolBar>
+        <RichTextBox Name="rtbEditor" SelectionChanged="rtbEditor_SelectionChanged" />
+    </DockPanel>
+</Window>
